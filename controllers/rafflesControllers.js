@@ -9,7 +9,7 @@ const {
 
     raffleRouter.get('/', async (req, res) => {
         const raffles = await getAllRaffles();
-        res.json({raffles});
+        res.status(200).json({data: raffles});
     }
     );
 
