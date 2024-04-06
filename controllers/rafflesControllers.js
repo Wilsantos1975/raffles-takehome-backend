@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const raffleRouter = Router();
 
-const { getAllRaffles, getRaffleById, getParticipantsByRaffleId } = require("../queries/rafflesQueries");
+const { getAllRaffles, getRaffleById, getParticipantsByRaffleId, createRaffle } = require("../queries/rafflesQueries");
 // const { route } = require('../app');
 
 
@@ -24,6 +24,13 @@ raffleRouter.get("/:id/participants", async (req, res) => {
   const participants = await getParticipantsByRaffleId(id);
   res.status(200).json({ data: participants });
 }); 
+
+//post a new raffle
+raffleRouter.post("/", async (req, res) => {
+  const { name, secret_token } = req.body;
+  const newRaffle = await createRaffle(name, secret_token);
+  res.status(201).json({ data: newRaffle });
+});
 
 
 

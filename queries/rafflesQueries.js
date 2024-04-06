@@ -19,7 +19,7 @@ const getRaffleById = async (id) => {
     }
     };
 
-    getParticipantsByRaffleId = async (id) => {
+   const  getParticipantsByRaffleId = async (id) => {
         try {
             const participants = await db.any("SELECT * FROM participants WHERE raffle_id = $1", id);
             return participants;
@@ -28,4 +28,13 @@ const getRaffleById = async (id) => {
         }
     }
 
-module.exports = { getAllRaffles, getRaffleById, getParticipantsByRaffleId };
+    const createRaffle = async (name, secret_token) => {
+        try {
+            const newRaffle = await db.one("INSERT INTO raffles (name, secret_token) VALUES ($1, $2) RETURNING *", [name, secret_token]);
+            return newRaffle;
+        } catch (error) {
+            return error;
+        }
+    }
+
+module.exports = { getAllRaffles, getRaffleById, getParticipantsByRaffleId, createRaffle };

@@ -1,15 +1,15 @@
-INSERT INTO raffles (name, description, secret_token) 
+INSERT INTO raffles (name, secret_token) 
 VALUES 
-('Summer Extravaganza', 'Win a dinner for 2 at the best Pizzeria of NYC', 'Pizza'),
-('Winter Wonderland', 'Win a ski trip to the Alps', 'Ski'),
-('Spring Fling', 'Win a trip to the Caribbean', 'Beach'),
-('Fall Fiesta', 'Win a trip to the Amazon', 'Jungle'),
-('Halloween Spooktacular', 'Win a trip to Transylvania', 'Vampire'),
-('Christmas Spectacular', 'Win a trip to the North Pole', 'Santa'),
-('New Year''s Eve Bash', 'Win a trip to Times Square', 'Ball Drop'),
-('Valentine''s Day Love Fest', 'Win a trip to Paris', 'Eiffel Tower'),
-('St. Patrick''s Day Shenanigans', 'Win a trip to Dublin', 'Leprechaun'),
-('Easter Eggstravaganza', 'Win a trip to the Easter Bunny''s house', 'Easter Bunny');
+('Summer Extravaganza', 'Pizza'),
+('Winter Wonderland', 'Ski'),
+('Spring Fling',  'Beach'),
+('Fall Fiesta','Jungle'),
+('Halloween Spooktacular', 'Vampire'),
+('Christmas Spectacular', 'Santa'),
+('New Year''s Eve Bash', 'Ball Drop'),
+('Valentine''s Day Love Fest', 'Eiffel Tower'),
+('St. Patrick''s Day Shenanigans', 'Leprechaun'),
+('Easter Eggstravaganza', 'Easter Bunny');
 
 
 INSERT INTO participants (raffle_id, name, email)

@@ -5,9 +5,8 @@ DROP TABLE IF EXISTS winners;
 CREATE TABLE raffles (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  description TEXT NOT NULL,
   secret_token VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+  -- created_at TIMESTAMP NOT NULL DEFAULT NOW()
 
 );
 
